@@ -1,0 +1,220 @@
+/* Minimal, readable styling (works well on phones) */
+:root {
+  --bg: #0b0f14;
+  --card: #121826;
+  --text: #e9eef7;
+  --muted: #a9b4c7;
+  --line: #243047;
+  --accent: #5aa9ff;
+  --accent2: #4ade80;
+  --danger: #fb7185;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, #070a0f, #0b0f14 35%, #070a0f);
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+header h1 {
+  margin: 10px 0 6px;
+  letter-spacing: 0.2px;
+}
+.sub {
+  margin: 0 0 8px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.card {
+  background: rgba(18, 24, 38, 0.92);
+  border: 1px solid rgba(36, 48, 71, 0.75);
+  border-radius: 18px;
+  padding: 16px;
+  margin: 14px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+}
+
+.card-head h2 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+.meta { color: var(--muted); font-size: 0.9rem; }
+
+.player {
+  width: 100%;
+  margin: 12px 0 6px;
+}
+
+details.transcript-wrap {
+  margin-top: 10px;
+  border-top: 1px solid rgba(36, 48, 71, 0.65);
+  padding-top: 10px;
+}
+
+details > summary {
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: var(--text);
+  list-style: none;
+}
+details > summary::-webkit-details-marker { display: none; }
+details > summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 8px;
+  transform: translateY(-1px);
+  color: var(--muted);
+}
+details[open] > summary::before { content: "▾"; }
+
+.tools {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0 8px;
+}
+
+.btn {
+  border: 1px solid rgba(36, 48, 71, 0.9);
+  background: rgba(11, 15, 20, 0.65);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.btn:hover { border-color: rgba(90, 169, 255, 0.9); }
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.transcript {
+  border: 1px solid rgba(36, 48, 71, 0.75);
+  border-radius: 14px;
+  padding: 10px;
+  background: rgba(7, 10, 15, 0.55);
+  max-height: 320px;
+  overflow: auto;
+}
+
+.line {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  margin: 6px 0;
+  cursor: pointer;
+  line-height: 1.35;
+}
+.line:hover {
+  border-color: rgba(90, 169, 255, 0.6);
+  background: rgba(90, 169, 255, 0.10);
+}
+.line .time {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-right: 8px;
+}
+.line.active {
+  border-color: rgba(74, 222, 128, 0.85);
+  background: rgba(74, 222, 128, 0.12);
+}
+.hint {
+  color: var(--muted);
+  margin: 10px 2px 0;
+  font-size: 0.92rem;
+}
+
+.footer {
+  color: var(--muted);
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 24px;
+}
+/* Story divider */
+.story-divider {
+  border: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.4);
+  margin: 52px 0;
+}
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+}
+/* Story Index (very subtle) */
+.story-index {
+  margin: 24px auto 40px;
+}
+
+.story-index-box {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.story-index-title {
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+.story-index ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.story-index li {
+  margin: 6px 0;
+}
+
+.story-index a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.story-index a:hover {
+  text-decoration: underline;
+}
+
+/* Back to Top button (force visible) */
+.back-to-top{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  background: #2b6cff;
+  border: 1px solid rgba(255,255,255,0.25);
+  font-weight: 600;
+  z-index: 9999;
+}
+.back-to-top:hover{
+  filter: brightness(1.05);
+}
